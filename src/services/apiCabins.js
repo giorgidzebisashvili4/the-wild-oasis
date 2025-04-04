@@ -11,6 +11,24 @@ export async function getCabins() {
   return data;
 }
 
+export async function createCabin(newCabin) {
+  const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
+    "/",
+    ""
+  );
+  // https://iguauepouutljqsauuuz.supabase.co/storage/v1/object/public/cabin-images//cabin-001.jpg
+  const { data, error } = await supabase
+    .from("cabins")
+    .insert([newCabin])
+    .select();
+
+  if (error) {
+    console.error(error);
+    throw new Error("Cabin could not be created");
+  }
+  return data;
+}
+
 export async function deleteCabin(id) {
   const { data, error } = await supabase.from("cabins").delete().eq("id", id);
 
