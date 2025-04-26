@@ -90,7 +90,10 @@ function Row({ children }) {
     </StyledRow>
   );
 }
-function Body({ children }) {}
+function Body({ data, render }) {
+  if (!data.length) return <Empty>Nothing here...</Empty>;
+  return <StyledBody>{data.map((item) => render(item))}</StyledBody>;
+}
 Table.Header = Header;
 Table.Body = Body;
 Table.Row = Row;
