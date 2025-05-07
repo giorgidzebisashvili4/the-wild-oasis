@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import React, { createContext, useContext } from "react";
 import styled from "styled-components";
 
 const StyledTable = styled.div`
@@ -92,7 +92,13 @@ function Row({ children }) {
 }
 function Body({ data, render }) {
   if (!data.length) return <Empty>Nothing here...</Empty>;
-  return <StyledBody>{data.map((item) => render(item))}</StyledBody>;
+  return (
+    <StyledBody>
+      {data.map((item, index) => (
+        <React.Fragment key={index}>{render(item)}</React.Fragment>
+      ))}
+    </StyledBody>
+  );
 }
 Table.Header = Header;
 Table.Body = Body;
