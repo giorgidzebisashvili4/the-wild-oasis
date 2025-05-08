@@ -103,4 +103,4 @@ function Body({ data, render }) {
 Table.Header = Header;
 Table.Body = Body;
 Table.Row = Row;
-Table.footer = Footer;
+Table.Footer = Footer;
