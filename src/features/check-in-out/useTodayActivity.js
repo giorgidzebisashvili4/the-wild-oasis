@@ -6,7 +6,7 @@ function useTodayActivity() {
     queryFn: getStaysTodayActivity,
     queryKey: ["today-activity"],
   });
-  console.log(activities);
+
   return { isLoading, activities };
 }
 
