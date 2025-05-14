@@ -62,7 +62,6 @@ function SalesChart({ bookings, numDays }) {
     start: subDays(new Date(), numDays - 1),
     end: new Date(),
   });
-  console.log(allDates);
 
   const data = allDates.map((date) => {
     return {
@@ -92,7 +91,10 @@ function SalesChart({ bookings, numDays }) {
       };
   return (
     <StyledSalesChart>
-      <Heading as="h2">Sales</Heading>
+      <Heading as="h2">
+        Sales from {format(allDates.at(0), "dd MMM yy")} &mdash;{" "}
+        {format(allDates.at(-1), "dd MMM yy")}
+      </Heading>
       <ResponsiveContainer height={300} width="100%">
         <AreaChart data={data}>
           <XAxis
