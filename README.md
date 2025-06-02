@@ -10,7 +10,7 @@
 
 </div>
 
-<a align="center" href="https://the-wild-oasis-alamin.vercel.app">
+<a align="center" href="https://the-wild-oasis-gdz.netlify.app/">
 
 ![Screenshot](./public/thumbnail-preview.jpg)
 
@@ -59,7 +59,7 @@ Originally built as part of a Udemy course, the app was enhanced and personalize
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-github-username/the-wild-oasis-admin.git
+   git clone https://github.com/giorgidzebisashvili4/the-wild-oasis.git
    ```
 2. Install dependencies:
    ```bash
